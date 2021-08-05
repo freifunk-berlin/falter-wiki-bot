@@ -56,7 +56,7 @@ params_login = {
 r = s.post(URL, data=params_login)
 data = r.json()
 
-# Step 3: GET request to fetch CSRF token
+# GET request to fetch CSRF token
 params_csrf = {
     "action": "query",
     "meta": "tokens",
@@ -68,7 +68,7 @@ data = r.json()
 CSRF_TOKEN = data['query']['tokens']['csrftoken']
 
 # POST request to edit specific section in a page
-PARAMS_3 = {
+params_edit = {
     "action": "edit",
     "title": args.title,
     "section": args.section, # 0=Introduction, 1=first_section, etc.
@@ -80,6 +80,6 @@ PARAMS_3 = {
     "summary": "Automatisches Update aus bbb-configs."
 
 }
-r = s.post(URL, data=PARAMS_3)
+r = s.post(URL, data=params_edit)
 data = r.json()
 print(data)
