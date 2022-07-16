@@ -1,4 +1,4 @@
-== Automatische Dokumentation ==
+== bbb-configs: Automatische Dokumentation ==
 
 <b>Dieser Abschnitt wird automatisch aus dem [https://github.com/Freifunk-Spalter/bbb-configs bbb-configs] Repository erzeugt. Bitte bearbeite ihn nicht manuell, da deine Änderungen bei einem Update überschrieben werden.</b>
 
