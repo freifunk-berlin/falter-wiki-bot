@@ -68,17 +68,16 @@ def find_bbbconfigs_section(pagetitle: str):
         exit(2)
 
     # iterate over sections and find bbb-config section
-    i = 1
-    bbb_configs_section = False
-    for sec in sections:
+    bbb_configs_section = -1
+    for index, sec in enumerate(sections):
         sec_title = sec.get("line")
         if re.search(SECTION_REGEX, sec_title):
-            bbb_configs_section = True
+            bbb_configs_section = index
             break
-        i += 1
+        
 
-    if bbb_configs_section:
-        return i
+    if bbb_configs_section != -1:
+        return bbb_configs_section
     else:
         raise ValueError("Theres no bbb-configs-section in the given article!")
         exit(1)
